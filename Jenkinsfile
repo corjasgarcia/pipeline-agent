@@ -4,7 +4,7 @@ Test agents in a pipeline
 testing...
 */
 pipeline {
-	agent none
+	agent any
 	/*
 	tools{
 	docker 'docker'
@@ -12,10 +12,10 @@ pipeline {
 	*/
     stages {
         stage('Example Build') {
-			agent {
+			/*agent {
 				docker { image 'node:7-alpine' }
 				}
-            
+            */
             steps {
 			   sh 'docker ps'
                echo 'Hello, Maven'
@@ -23,9 +23,10 @@ pipeline {
             }
         }
         stage('Example Test') {
-            agent {
+            /*agent {
                 docker { image 'node:7-alpine' }
             }
+			*/
             steps {
                 echo 'Hello, JDK'
                 //sh 'java -version'
