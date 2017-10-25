@@ -4,7 +4,9 @@ Test agents in a pipeline
 testing...
 */
 pipeline {
-	agent {label 'master'}
+	agent {
+		label 'master'
+	}
 	/*
 	tools{
 	docker 'docker'
