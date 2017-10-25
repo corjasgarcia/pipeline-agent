@@ -5,13 +5,15 @@ testing...
 */
 pipeline {
 	agent any
-	
+	tools{
+	docker 'docker'
+	}
     stages {
         stage('Example Build') {
 		
             
             steps {
-			DOCKER_HOME = tool "docker"
+			   sh 'docker ps'
                 echo 'Hello, Maven'
                // sh 'mvn --version'
             }
