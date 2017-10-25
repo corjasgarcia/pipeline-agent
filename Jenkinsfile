@@ -5,7 +5,7 @@ testing...
 */
 pipeline {
 	agent {
-        label 'node1'
+        label 'docker'
     }
 	/*
 	tools{
