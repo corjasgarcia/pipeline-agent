@@ -4,7 +4,7 @@ Test agents in a pipeline
 testing...
 */
 pipeline {
-	agent any
+	agent (label 'master')
 	/*
 	tools{
 	docker 'docker'
@@ -12,8 +12,9 @@ pipeline {
 	*/
     stages {
         stage('Example Build') {
+			
 			/*agent {
-				docker { image 'node:7-alpine' }
+				
 				}
             */
             steps {
@@ -23,6 +24,7 @@ pipeline {
             }
         }
         stage('Example Test') {
+			agent ('master')
             /*agent {
                 docker { image 'node:7-alpine' }
             }
