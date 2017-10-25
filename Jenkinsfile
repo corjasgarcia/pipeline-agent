@@ -5,11 +5,7 @@ testing...
 */
 pipeline {
 	agent {
-        docker {
-            reuseNode false
-            args '-u root -v /var/run/docker.sock:/var/run/docker.sock'
-            image 'chef/chefdk'
-        }
+        label 'node1'
     }
 	/*
 	tools{
