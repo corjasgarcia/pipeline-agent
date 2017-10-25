@@ -26,7 +26,7 @@ pipeline {
             }
         }
         stage('Example Test') {
-			agent ('master')
+		
             /*agent {
                 docker { image 'node:7-alpine' }
             }
